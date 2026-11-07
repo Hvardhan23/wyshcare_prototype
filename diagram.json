@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "ESP32 health monitor starter",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-ssd1306", "id": "display", "top": -140, "left": 240, "attrs": { "i2cAddress": "0x3c" } },
+    { "type": "wokwi-max30102", "id": "max30102", "top": 90, "left": 250, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu", "top": 210, "left": 250, "attrs": {} },
+    { "type": "wokwi-ds18b20", "id": "temperature", "top": 330, "left": 250, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "pullup", "top": 385, "left": 340, "attrs": { "value": "4.7k" } },
+    { "type": "wokwi-pushbutton", "id": "touch", "top": 450, "left": 300, "attrs": { "color": "red", "label": "touch" } }
+  ],
+  "connections": [
+    [ "esp:21", "display:DATA", "green", [] ],
+    [ "esp:22", "display:CLK", "blue", [] ],
+    [ "esp:3V3", "display:3V3", "red", [] ],
+    [ "esp:GND.1", "display:GND", "black", [] ],
+    [ "esp:21", "max30102:SDA", "green", [] ],
+    [ "esp:22", "max30102:SCL", "blue", [] ],
+    [ "esp:3V3", "max30102:VCC", "red", [] ],
+    [ "esp:GND.1", "max30102:GND", "black", [] ],
+    [ "esp:21", "imu:SDA", "green", [] ],
+    [ "esp:22", "imu:SCL", "blue", [] ],
+    [ "esp:3V3", "imu:VCC", "red", [] ],
+    [ "esp:GND.1", "imu:GND", "black", [] ],
+    [ "esp:4", "temperature:DQ", "green", [] ],
+    [ "esp:3V3", "temperature:VCC", "red", [] ],
+    [ "esp:GND.1", "temperature:GND", "black", [] ],
+    [ "esp:4", "pullup:1", "green", [] ],
+    [ "esp:3V3", "pullup:2", "red", [] ],
+    [ "esp:27", "touch:1", "green", [] ],
+    [ "esp:GND.1", "touch:2", "black", [] ]
+  ]
+}
