@@ -63,3 +63,4 @@ it so the starter remains usable with the standard Wokwi parts.
 - The MAX30102 output is raw sensor data, not a calculated pulse or SpO2 value.
 - GPIO 27 touch thresholds vary by board and environment; tune
   `TOUCH_THRESHOLD` for your hardware.
+# wyshcare_prototype
